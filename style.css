@@ -1,12 +1,8 @@
 :root {
   --primary: #FFCB05;
-  /* Pokemon Yellow */
-  --primary-hover: #e5b600;
   --secondary: #3B4CCA;
-  /* Pokemon Blue */
   --secondary-hover: #3040a8;
   --accent: #FF0000;
-  /* Pokeball Red */
   --bg-gradient-1: #4ca1af;
   --bg-gradient-2: #c4e0e5;
   --glass-bg: rgba(255, 255, 255, 0.4);
