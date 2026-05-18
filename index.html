@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokemon Memory Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+
+  <div id="top_controls">
+    <button class="diff_btn active_diff" id="btn_easy">Easy</button>
+    <button class="diff_btn" id="btn_medium">Medium</button>
+    <button class="diff_btn" id="btn_hard">Hard</button>
+  </div>
+
+  <div id="reset_row">
+    <button id="reset_btn">Reset</button>
+    <button id="start_btn">Start!</button>
+  </div>
+
+  <div id="stats" class="hidden">
+    <p>Total Number of Pairs <span id="total_pairs"></span></p>
+    <p>Number of Matches <span id="num_matches"></span></p>
+    <p>Number of pair left <span id="pairs_left"></span></p>
+    <p>Number of Clicks <span id="num_clicks"></span></p>
+    <p>You got <span id="total_seconds"></span> seconds. <span id="seconds_passed"></span> seconds passed!</p>
+  </div>
+
+  <div id="game_grid" class="hidden"></div>
+
+  <div id="theme_controls" class="hidden">
+    <button id="btn_dark" class="theme_btn active_theme">Dark</button>
+    <button id="btn_light" class="theme_btn">light</button>
+  </div>
+
+</body>
+</html>
