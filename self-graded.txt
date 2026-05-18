@@ -17,10 +17,10 @@ Self-graded Assignment 3 Checklist
 [X]  Start and Reset buttons are added to the game.
 [X]  Difficulty levels are added to the game.
 [X]  Themes are added to the game.
-[]  Power-up logic is added to the game.
+[X]  Power-up logic is added to the game.
 
 10/10 marks
-[]  The website has an appealing, professional and consistent look.
+[X]  The website has an appealing, professional and consistent look.
 
 Total Grade:
 70/70 (Total grade out of 70, first item is 10 marks, 2 marks each for next 4 items, 7 marks each for next 6 items and 10 marks for last item)

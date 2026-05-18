@@ -16,6 +16,7 @@ let totalSeconds = 100;
 let secondsPassed = 0;
 let timerInterval = null;
 let gameActive = false;
+let peekUses = 3;
 
 async function fetchAllPokemon() {
   const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1025");
@@ -166,6 +167,8 @@ async function startGame() {
   clicks = 0;
   pairsMatched = 0;
   secondsPassed = 0;
+  peekUses = 3;
+  $("#peek_btn").text("Peek (3 left)").prop("disabled", false);
 
   const levels = DIFFICULTIES[difficulty];
   pairsTotal = levels.pairs;
@@ -189,6 +192,23 @@ async function startGame() {
   startTimer();
 }
 
+function peek() {
+  if (!gameActive || peekUses <= 0) return;
+
+  peekUses--;
+  $("#peek_btn").text(`Peek (${peekUses} left)`);
+  if (peekUses === 0) $("#peek_btn").prop("disabled", true);
+
+  lockBoard = true;
+  const $unmatched = $(".card:not(.matched):not(.flip)");
+  $unmatched.addClass("flip");
+
+  setTimeout(() => {
+    $unmatched.removeClass("flip");
+    lockBoard = false;
+  }, 2000);
+}
+
 $(document).ready(async function () {
   await fetchAllPokemon();
 
@@ -203,15 +223,16 @@ $(document).ready(async function () {
 
   $("#start_btn").on("click", startGame);
   $("#reset_btn").on("click", hideGame);
+  $("#peek_btn").on("click", peek);
 
   $("#btn_dark").on("click", function () {
-    $("#game_grid").addClass("dark");
+    $("body").addClass("dark-mode");
     $(".theme_btn").removeClass("active_theme");
     $(this).addClass("active_theme");
   });
 
   $("#btn_light").on("click", function () {
-    $("#game_grid").removeClass("dark");
+    $("body").removeClass("dark-mode");
     $(".theme_btn").removeClass("active_theme");
     $(this).addClass("active_theme");
   });

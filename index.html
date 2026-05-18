@@ -6,38 +6,60 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokemon Memory Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="index.js"></script>
 </head>
 
 <body>
+  <div class="background-overlay"></div>
+  <div class="container">
+    <h1 class="game-title">Pokémon Memory Match</h1>
 
-  <div id="top_controls">
-    <button class="diff_btn active_diff" id="btn_easy">Easy</button>
-    <button class="diff_btn" id="btn_medium">Medium</button>
-    <button class="diff_btn" id="btn_hard">Hard</button>
+    <div id="top_controls" class="glass-panel">
+      <button class="diff_btn active_diff" id="btn_easy">Easy</button>
+      <button class="diff_btn" id="btn_medium">Medium</button>
+      <button class="diff_btn" id="btn_hard">Hard</button>
+    </div>
+
+    <div id="reset_row" class="glass-panel">
+      <button id="reset_btn" class="action-btn">Reset</button>
+      <button id="start_btn" class="action-btn primary-btn">Start Game!</button>
+    </div>
+
+    <div id="stats" class="glass-panel hidden">
+      <div class="stat-box">
+        <span class="stat-label">Total Pairs</span>
+        <span class="stat-value" id="total_pairs">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Matches</span>
+        <span class="stat-value" id="num_matches">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Pairs Left</span>
+        <span class="stat-value" id="pairs_left">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Clicks</span>
+        <span class="stat-value" id="num_clicks">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Time</span>
+        <span class="stat-value"><span id="seconds_passed">0</span> / <span id="total_seconds">0</span></span>
+      </div>
+    </div>
+
+    <div id="game_grid" class="glass-panel hidden"></div>
+
+    <div id="theme_controls" class="glass-panel hidden">
+      <button id="btn_dark" class="theme_btn">Dark</button>
+      <button id="btn_light" class="theme_btn active_theme">Light</button>
+      <button id="peek_btn" class="action-btn peek-btn">Peek (3 left)</button>
+    </div>
   </div>
-
-  <div id="reset_row">
-    <button id="reset_btn">Reset</button>
-    <button id="start_btn">Start!</button>
-  </div>
-
-  <div id="stats" class="hidden">
-    <p>Total Number of Pairs <span id="total_pairs"></span></p>
-    <p>Number of Matches <span id="num_matches"></span></p>
-    <p>Number of pair left <span id="pairs_left"></span></p>
-    <p>Number of Clicks <span id="num_clicks"></span></p>
-    <p>You got <span id="total_seconds"></span> seconds. <span id="seconds_passed"></span> seconds passed!</p>
-  </div>
-
-  <div id="game_grid" class="hidden"></div>
-
-  <div id="theme_controls" class="hidden">
-    <button id="btn_dark" class="theme_btn active_theme">Dark</button>
-    <button id="btn_light" class="theme_btn">light</button>
-  </div>
-
 </body>
 </html>
